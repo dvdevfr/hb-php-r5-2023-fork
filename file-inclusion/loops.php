@@ -1,14 +1,10 @@
 <?php
 require_once 'data/users.php';
+$title = "Boucles";
 require_once 'layout/header.php';
 ?>
 
 <h1>Boucles</h1>
-
-<p>
-  <a href="test.php">Page de test</a>
-</p>
-
 <!-- FOREACH -->
 <h2>Foreach</h2>
 <div class="container">
