@@ -25,4 +25,5 @@ $user->setLastname("Williams");
 $user->setFirstname("George");
 
 echoWithBr($user->getFullName());
-echo $user->getIntroduction();
+
+echo surroundWithHtml($user->getIntroduction(), HtmlTag::Divider);
