@@ -3,6 +3,7 @@
 
 require_once 'classes/Product.php';
 require_once 'classes/User.php';
+require_once 'functions/utils.php';
 
 $product = new Product("Beurre");
 $otherProduct = new Product("Télé");
@@ -15,14 +16,13 @@ $otherProduct->setPrice(65.1);
 
 var_dump($product);
 
-echo "Prix du produit : " . $product->getFullPrice(1.2) . "<br />";
-echo "Prix de l'autre produit : " . $otherProduct->getFullPrice(1.2) . "<br />";
+echoWithBr("Prix du produit : " . $product->getFullPrice(1.2));
+echoWithBr("Prix de l'autre produit : " . $otherProduct->getFullPrice(1.2));
 
 $user = new User();
 
 $user->setLastname("Williams");
 $user->setFirstname("George");
 
-echo $user->getFullName();
-
+echoWithBr($user->getFullName());
 echo $user->getIntroduction();
