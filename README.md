@@ -38,6 +38,8 @@ Pour chaque produit, affichez également ses tags.
 
 Atelier products : [getTotalPrice](atelier_products/functions/calculate.php)
 
+[Fonction utilitaire `echoWithBr`](poo/functions/utils.php)
+
 ### Arrondi à 0.5
 
 Vous allez réaliser une fonction qui effectue un arrondi à 0.5 supérieur ou inférieur au plus proche suivant la valeur donnée
@@ -65,3 +67,13 @@ On ne travaillera qu'avec des index numériques.
 Si on fournit un index plus grand que la taille du tableau, alors on proposera 2 implémentations différentes : la première renverra une erreur car l'index est en-dehors des limites, la seconde agrandira le tableau avec des éléments vides jusqu'à insérer l'élément voulu.
 
 [Solutions](functions/insertIntoArray/)
+
+## Superglobales
+
+[Introduction, tableau $\_GET](superglobals/welcome.php)
+
+[Atelier produits, fiche produit](atelier_products/product.php)
+
+## Formulaires
+
+[Atelier produits, recherche par nom avec méthode GET](atelier_products/search.php)
