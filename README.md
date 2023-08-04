@@ -28,6 +28,12 @@ Variables, constantes, commentaires, fonctions de base de la SPL (var_dump, echo
 
 Dossier [file-inclusion](file-inclusion/)
 
+### Atelier produits
+
+À partir du [fichier de produits](atelier_products/data/products.php), réalisez une page affichant la liste des produits et leurs informations, sous forme de grille dans une page.
+
+Pour chaque produit, affichez également ses tags.
+
 ## Fonctions
 
 Atelier products : [getTotalPrice](atelier_products/functions/calculate.php)
