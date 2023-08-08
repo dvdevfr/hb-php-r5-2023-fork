@@ -9,6 +9,13 @@ if (isset($_POST['email'])) { // Formulaire soumis
     $checker = new SpamChecker();
     if ($checker->isSpam($email)) {
       $errorMessage = "Cet email est un spam";
+    } else {
+      $emails = file("emails.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      if (in_array($email->getEmailAddress(), $emails)) {
+        $errorMessage = "Cet email existe déjà dans la base de données";
+      } else {
+        file_put_contents("emails.txt", $email->getEmailAddress() . PHP_EOL, FILE_APPEND);
+      }
     }
   } catch (InvalidArgumentException $ex) {
     $errorMessage = $ex->getMessage();
