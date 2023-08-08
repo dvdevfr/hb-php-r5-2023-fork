@@ -3,21 +3,15 @@
 if (isset($_POST['email'])) { // Formulaire soumis
   require_once 'classes/SpamChecker.php';
   require_once 'classes/Email.php';
+  require_once 'classes/EmailsFile.php';
+  require_once 'classes/Utils.php';
 
   try {
     $email = new Email($_POST['email']);
-    $checker = new SpamChecker();
-    if ($checker->isSpam($email)) {
-      $errorMessage = "Cet email est un spam";
-    } else {
-      $emails = file("emails.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
-      if (in_array($email->getEmailAddress(), $emails)) {
-        $errorMessage = "Cet email existe déjà dans la base de données";
-      } else {
-        file_put_contents("emails.txt", $email->getEmailAddress() . PHP_EOL, FILE_APPEND);
-      }
-    }
-  } catch (InvalidArgumentException $ex) {
+    $emailsFile = new EmailsFile(new SpamChecker());
+    $emailsFile->add($email);
+    Utils::redirect('confirm_sub.php');
+  } catch (Exception $ex) {
     $errorMessage = $ex->getMessage();
   }
 }
