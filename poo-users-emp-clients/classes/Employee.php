@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/User.php';
 
-class Employee extends User
+class Employee extends User implements IFormattable, IListItem
 {
   public function __construct(
     int $id,
@@ -12,6 +12,21 @@ class Employee extends User
     private int $empNumber
   ) {
     parent::__construct($id, $name, $password, $email);
+  }
+
+  public function getValue(): string
+  {
+    return $this->id;
+  }
+
+  public function getLabel(): string
+  {
+    return $this->name;
+  }
+
+  public function format(): string
+  {
+    return "Format employé";
   }
 
   public function getIntroduction(): string

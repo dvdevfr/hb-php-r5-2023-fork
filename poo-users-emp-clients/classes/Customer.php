@@ -2,7 +2,7 @@
 
 require_once __DIR__ . '/User.php';
 
-class Customer extends User
+class Customer extends User implements IFormattable
 {
   public function __construct(
     int $id,
@@ -13,6 +13,11 @@ class Customer extends User
     private bool $premium
   ) {
     parent::__construct($id, $name, $password, $email);
+  }
+
+  public function format(): string
+  {
+    return "Format client";
   }
 
   public function getIntroduction(): string
