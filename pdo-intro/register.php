@@ -2,7 +2,7 @@
 
 <h1>Inscription</h1>
 
-<form action="auth.php" method="POST">
+<form action="register_process.php" method="POST">
   <div>
     <label for="lastname">
       Nom
